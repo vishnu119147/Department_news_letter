@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Information</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #748D92;
+            background: url('https://www.bietdvg.edu/static/assets/images/home/111.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .header {
+            background-color: #4c679e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #124E66;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .main-content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section img {
+            max-width: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .section .description {
+            flex-grow: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section img {
+                margin-bottom: 15px;
+            }
+
+            .section .description {
+                max-width: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Research Projects</h1>
+        <p>Here are the latest research projects done by BIET College.</p>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <img src="https://psiborg.in/wp-content/uploads/2024/01/FB-Post-1-1.webp" alt="Building">
+            <div class="description">
+                <h2>Safety Gadget: An IoT Based Security System</h2>
+                <p>The Safety Gadget IoT-based security system represents a significant advancement in the field of security technology. By leveraging the power of IoT, it provides a flexible, scalable, and efficient solution for monitoring and protecting various environments.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://e-peas.com/wp-content/uploads/2020/03/case-img-new-2.jpg" alt="Library">
+            <div class="description">
+                <h2>IoT Based Animal Tracking System</h2>
+                <p>An IoT-based animal tracking system uses interconnected sensors and GPS technology to monitor the location and behavior of animals in real-time. The system typically involves lightweight GPS collars or tags attached to the animals, which transmit data to a central cloud server via IoT gateways.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://user-images.githubusercontent.com/81012989/164935200-3953daf1-f92b-4383-b783-cec06cc1e0f5.png" alt="Cafeteria">
+            <div class="description">
+                <h2>Detection Of Cyberbullying On Social Media Platforms</h2>
+                <p>Cyberbullying on social media platforms has become a significant concern due to its widespread impact on mental health and well-being. Detecting and mitigating cyberbullying requires advanced technologies and methodologies to analyze vast amounts of data in real-time.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://www.mdpi.com/applsci/applsci-10-08701/article_deploy/html/images/applsci-10-08701-g001.png" alt="Depression Detection">
+            <div class="description">
+                <h2>Depression Detection System and Remedial Recommendation System Using Machine Learning</h2>
+                <p>This system uses machine learning algorithms to detect signs of depression from text, speech, and behavioral data. It provides personalized remedial recommendations, offering support and interventions based on the user's data.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-019-44004-w/MediaObjects/41598_2019_44004_Fig1_HTML.png" alt="Smart Ward">
+            <div class="description">
+                <h2>Smart Ward Tracking and Alerting System</h2>
+                <p>The Smart Ward Tracking and Alerting System utilizes IoT and sensors to monitor patients in real-time, providing alerts to medical staff for immediate attention. This system aims to enhance patient care and safety in hospital wards.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://media.springernature.com/lw1200/springer-static/image/art%3A10.1007%2Fs00521-023-08619-5/MediaObjects/521_2023_8619_Fig2_HTML.png" alt="Precision Agriculture">
+            <div class="description">
+                <h2>Novel Approach to Formulate Zone Parameters to Improve the Crop Yield Using Remote Sensing Data for Precision Agriculture</h2>
+                <p>This research focuses on using remote sensing data to create zone parameters for precision agriculture. The approach aims to improve crop yield by providing farmers with precise information on soil conditions, moisture levels, and crop health.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        {% for event in events %}
+        <div class="section">
+            <h2>{{ event.title }}</h2>
+            <p>{{ event.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

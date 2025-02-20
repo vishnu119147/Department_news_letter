@@ -1,0 +1,19 @@
+CREATE DATABASE newsletter_platform;
+USE newsletter_platform;
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(80) NOT NULL UNIQUE,
+    email VARCHAR(120) NOT NULL UNIQUE,
+    password VARCHAR(200) NOT NULL,
+    role VARCHAR(10) NOT NULL
+);
+select *from user;
+
+CREATE TABLE events (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category VARCHAR(255),
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+ALTER TABLE events ADD COLUMN category VARCHAR(255);

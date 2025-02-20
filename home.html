@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #abd9cd;
+            background: url('https://www.bietdvg.edu/static/assets/images/home/111.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #4c679e;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .logout-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background: linear-gradient(135deg, #4c679e, #007bff);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logout-btn:hover {
+            background: linear-gradient(135deg, #007bff, #4c679e);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .sections {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            color: white;
+            background: linear-gradient(135deg, #4c679e, #007bff);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #007bff, #4c679e);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .sections {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 80%;
+            }
+        }
+        h1{
+            font-size: 60px;
+            background-color: azure;
+        }
+        p{
+            font-size: 20px;
+            color: rgb(20, 20, 20);
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome, {{ username }}!</h1>
+            <a href="/home" class="logout-btn">Home</a>
+            <a href="/contactus" class="logout-btn">Contact</a>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></div><br>
+            <p>This is the home page. Choose a section to view:</p>
+        </div>
+        <div class="sections">
+            <a href="{{ url_for('research_projects') }}" class="btn">Research Projects</a>
+            <a href="{{ url_for('student_achievements') }}" class="btn">Student Achievements</a>
+            <a href="{{ url_for('faculty_publications') }}" class="btn">Faculty Publications</a>
+            <a href="{{ url_for('upcoming_events') }}" class="btn">Events By BIET College</a>
+            {% if session['role'] == 'admin' %}
+            <a href="{{ url_for('add_event') }}" class="btn">Add Event</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

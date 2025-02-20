@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departmental Newsletter Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Departmental Newsletter</h1>
+            <nav>
+                <ul>
+                    <li><a href="/user_login">Home</a></li>
+                    <li><a href="/user_login">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <h2>Welcome to the BIET Departmental Newsletter Platform</h2>
+            <div class="login-buttons">
+                <a href="{{ url_for('admin_login') }}" class="btn">Admin Login</a>
+                <a href="{{ url_for('user_login') }}" class="btn">User Login</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Departmental Newsletter Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

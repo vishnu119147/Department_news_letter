@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background: url('https://www.bietdvg.edu/static/assets/images/home/111.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #555;
+        }
+        .social-media a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Whether you have a question about our services, need assistance, or just want to give feedback, feel free to reach out to us.</p>
+
+    <h2>Get in Touch</h2>
+    <p><strong>Address:</strong><br>
+    BIET<br>
+    Davangere, Karnataka, 577004<br>
+    India</p>
+
+    <p><strong>Phone:</strong> +91 9741841463</p>
+    <p><strong>Email:</strong> info@biet.com</p>
+    <p><strong>Office Hours:</strong><br>
+    Monday - Friday: 9:00 AM - 6:00 PM<br>
+    Saturday: 10:00 AM - 4:00 PM<br>
+    Sunday: Closed</p>
+
+    <h2>Contact Form</h2>
+    <form action="/submit_contact_form" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Social Media</h2>
+    <div class="social-media">
+        <a href="https://www.instagram.com/team_biet?igsh=MXg3aGs1cHRhbXpjZw==">Instagram</a>
+    </div>
+    <p>For more Quires Visit <a href="https://www.bietdvg.edu/">BIET</a> official</p>
+</div>
+
+</body>
+</html>

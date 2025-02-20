@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Information</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #748D92;
+            background: url('https://www.bietdvg.edu/static/assets/images/home/111.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        .header {
+            background-color: #4c679e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #124E66;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .header h1 {
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .main-content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section img {
+            max-width: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .section .description {
+            flex-grow: 1;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #007bff;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section img {
+                margin-bottom: 15px;
+            }
+
+            .section .description {
+                max-width: 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Faculty Publications</h1>
+        <p>Here are the latest Faculty Publications done by BIET College.</p>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <img src="https://www.bietdvg.edu/media/department/ME/image/T-ME-02-Dr_S_KUMARAPPA_6gv9CG2.jpg" alt="Dr. S Kumarappa">
+            <div class="description">
+                <h2>Dr. S Kumarappa<br>Professor & Dean(Exam)<br>Department of Mechanical Engineering</h2>
+                <p>INDOOR AIR POLLUTION-A SILENT KILLER</p>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://www.bietdvg.edu/media/department/CS/image/T-CS-19-Dr_NAVEEN_KUMAR_K_R_nYALgex.jpg" alt="Dr. Naveen Kumar K R">
+            <div class="description">
+                <h2>Dr. Naveen Kumar K R<br>Associate Professor<br>Department of CSE</h2>
+                <p>SOFTWARE DESIGN PATTERN</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://www.bietdvg.edu/media/department/CS/image/T-CS-10-M_S_ABDUL_RAZAK.jpg" alt="Dr. Abdul Razak M S">
+            <div class="description">
+                <h2>Dr. Abdul Razak M S<br>Associate Professor<br>Department of CSE</h2>
+                <p>COMPARISON OF DATABASE MANAGEMENT SYSTEMS (DBMS) AND DATA STREAM MANAGEMENT SYSTEMS (DSMS)</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <img src="https://www.bietdvg.edu/media/department/CV/image/A255_AXB847P.jpg" alt="Nidarshana D.P">
+            <div class="description">
+                <h2>Nidarshana D.P<br>Assistant Professor<br>Department of Civil Engineering</h2>
+                <p>CLIMATIC RESPONSIVE BUILDING-APPROACH FOR ARCHITECTURE</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <img src="https://www.bietdvg.edu/media/department/AIML/image/VIJAYALAKSHMI_S_HALLIKERI._S.png" alt="SMT. Vijaya Lakshmi S Hallikeri">
+            <div class="description">
+                <h2>SMT. Vijaya Lakshmi S Hallikeri<br>Assistant Professor<br>Department of AI & ML</h2>
+                <p>ಹೀಗೊಂದು ಮಳೆ ಸಂಜೆಯ ಸುಂದರ ಚಿತ್ರಗಳು</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        {% for event in events %}
+        <div class="section">
+            <h2>{{ event.title }}</h2>
+            <p>{{ event.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
